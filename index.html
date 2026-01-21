@@ -3,45 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampir Köylü - Destek ve Gizlilik</title>
+    <title>Vampire Villager - Official Website</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f9; color: #333; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h1 { color: #d32f2f; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
-        h2 { color: #444; margin-top: 30px; }
-        .contact-box { background: #e3f2fd; padding: 15px; border-radius: 5px; border-left: 5px solid #2196f3; }
-        footer { margin-top: 40px; font-size: 0.8em; text-align: center; color: #777; }
+        :root {
+            --primary-color: #ff3b3b; /* Kan kırmızısı */
+            --bg-color: #121212; /* Koyu arka plan */
+            --card-bg: #1e1e1e; /* Kart rengi */
+            --text-color: #e0e0e0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Dil Seçeneği Butonları */
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 0 5px;
+            transition: color 0.3s;
+        }
+        .lang-btn:hover { color: white; }
+        .lang-btn.active { color: var(--primary-color); text-decoration: underline; }
+
+        /* Header Alanı */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1a0505 0%, var(--bg-color) 100%);
+            position: relative;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-top: 10px;
+        }
+        
+        /* Buton Tasarımı */
+        .btn-download {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 59, 59, 0.4);
+        }
+
+        /* İçerik Kutuları */
+        .content-box {
+            background: var(--card-bg);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+        h2 { color: var(--text-color); border-bottom: 1px solid #333; padding-bottom: 10px; }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Vampir Köylü - Destek Sayfası</h1>
-    
-    <p>Vampir Köylü mobil uygulamasına hoş geldiniz. Bu sayfa, Google Play Store gereksinimleri doğrultusunda kullanıcılarımız için destek ve gizlilik politikası bilgilerini sağlamak amacıyla oluşturulmuştur.</p>
-
-    <div class="contact-box">
-        <h3>📧 İletişim ve Destek</h3>
-        <p>Uygulama ile ilgili herhangi bir sorununuz, öneriniz veya hatanız varsa lütfen bizimle iletişime geçin:</p>
-        <p><strong>E-posta:</strong> desteksancaktutan@gmail.com</p>
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr">TR</button> | 
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
-    <h2>Gizlilik Politikası (Privacy Policy)</h2>
-    <p>Vampir Köylü uygulaması, kullanıcıların kişisel verilerini izinsiz toplamaz veya üçüncü şahıslarla paylaşmaz. </p>
-    
-    <ul>
-        <li><strong>Veri Toplama:</strong> Uygulama, oyun deneyimini iyileştirmek dışında kişisel veri toplamaz.</li>
-        <li><strong>Reklamlar:</strong> Uygulama içerisinde Google AdMob gibi üçüncü taraf reklam hizmetleri kullanılabilir. Bu hizmetler, size uygun reklamlar göstermek için anonim veriler toplayabilir.</li>
-        <li><strong>İzinler:</strong> Uygulama sadece oyunun çalışması için gerekli temel izinleri ister.</li>
-    </ul>
+    <header>
+        <h1 id="title">VAMPİR KÖYLÜ</h1>
+        <p class="subtitle" id="subtitle">Kimseye güvenme. Gece çöküyor...</p>
+        
+        <a href="#" class="btn-download" id="downloadBtn">📲 Google Play'den İndir (Yakında)</a>
+    </header>
 
-    <h2>Hesap Silme Talebi</h2>
-    <p>Eğer oyundaki verilerinizin veya hesabınızın silinmesini istiyorsanız, yukarıdaki e-posta adresi üzerinden bize talep gönderebilirsiniz. Talebiniz en kısa sürede işleme alınacaktır.</p>
+    <div class="container">
+        
+        <div class="content-box">
+            <h2 id="aboutTitle">Hakkında</h2>
+            <p id="aboutText">Vampir Köylü, strateji ve gizem dolu bir rol yapma oyunudur. Köylüleri koru ya da hepsini avla. Seçim senin! Arkadaşlarınla veya çevrimiçi oyuncularla nefes kesen bir mücadeleye hazır ol.</p>
+        </div>
+
+        <div class="content-box">
+            <h2 id="privacyTitle">Gizlilik Politikası</h2>
+            <p id="privacyText">Vampir Köylü uygulaması, kullanıcı gizliliğine önem verir. Kişisel verileriniz (isim, konum vb.) sunucularımızda saklanmaz. Oyun sadece Google AdMob reklam servisini kullanır ve temel izinleri talep eder.</p>
+        </div>
+
+        <div class="content-box">
+            <h2 id="contactTitle">İletişim & Destek</h2>
+            <p id="contactText">Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:</p>
+            <p>📧 <strong>E-posta:</strong> buraya_eposta_adresinizi_yazin@gmail.com</p>
+            <p id="deleteText">🗑️ <strong>Veri Silme Talebi:</strong> Hesabınızın veya verilerinizin silinmesi için yukarıdaki maile talep gönderebilirsiniz.</p>
+        </div>
+
+    </div>
 
     <footer>
-        <p>&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır.</p>
+        <p id="footerText">&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır.</p>
     </footer>
-</div>
+
+    <script>
+        // Çeviri Veritabanı
+        const translations = {
+            tr: {
+                title: "VAMPİR KÖYLÜ",
+                subtitle: "Kimseye güvenme. Gece çöküyor...",
+                downloadBtn: "📲 Google Play'den İndir (Yakında)",
+                aboutTitle: "Hakkında",
+                aboutText: "Vampir Köylü, strateji ve gizem dolu bir rol yapma oyunudur. Köylüleri koru ya da hepsini avla. Seçim senin! Arkadaşlarınla veya çevrimiçi oyuncularla nefes kesen bir mücadeleye hazır ol.",
+                privacyTitle: "Gizlilik Politikası",
+                privacyText: "Vampir Köylü uygulaması, kullanıcı gizliliğine önem verir. Kişisel verileriniz (isim, konum vb.) sunucularımızda saklanmaz. Oyun sadece Google AdMob reklam servisini kullanır ve temel izinleri talep eder.",
+                contactTitle: "İletişim & Destek",
+                contactText: "Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:",
+                deleteText: "🗑️ <strong>Veri Silme Talebi:</strong> Hesabınızın veya verilerinizin silinmesi için yukarıdaki maile talep gönderebilirsiniz.",
+                footerText: "&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır."
+            },
+            en: {
+                title: "VAMPIRE VILLAGER",
+                subtitle: "Trust no one. Night is falling...",
+                downloadBtn: "📲 Download on Google Play (Soon)",
+                aboutTitle: "About",
+                aboutText: "Vampire Villager is a role-playing game full of strategy and mystery. Protect the villagers or hunt them all down. The choice is yours! Get ready for a breathtaking battle with your friends or online players.",
+                privacyTitle: "Privacy Policy",
+                privacyText: "Vampire Villager app respects user privacy. Your personal data (name, location, etc.) is not stored on our servers. The game only uses Google AdMob service and requests basic permissions.",
+                contactTitle: "Contact & Support",
+                contactText: "Found a bug or have a suggestion? Contact us:",
+                deleteText: "🗑️ <strong>Data Deletion Request:</strong> You can send a request to the email above to delete your account or data.",
+                footerText: "&copy; 2026 Vampire Villager Team. All rights reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            // Metinleri güncelle
+            document.getElementById('title').innerText = translations[lang].title;
+            document.getElementById('subtitle').innerText = translations[lang].subtitle;
+            document.getElementById('downloadBtn').innerText = translations[lang].downloadBtn;
+            document.getElementById('aboutTitle').innerText = translations[lang].aboutTitle;
+            document.getElementById('aboutText').innerText = translations[lang].aboutText;
+            document.getElementById('privacyTitle').innerText = translations[lang].privacyTitle;
+            document.getElementById('privacyText').innerText = translations[lang].privacyText;
+            document.getElementById('contactTitle').innerText = translations[lang].contactTitle;
+            document.getElementById('contactText').innerText = translations[lang].contactText;
+            document.getElementById('deleteText').innerHTML = translations[lang].deleteText;
+            document.getElementById('footerText').innerHTML = translations[lang].footerText;
+
+            // Buton aktiflik durumunu güncelle
+            document.getElementById('btn-tr').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // HTML dil etiketini güncelle
+            document.documentElement.lang = lang;
+        }
+    </script>
 
 </body>
 </html>
