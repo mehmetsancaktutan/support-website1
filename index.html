@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampire Villager - Official Website</title>
+    <title>Vampir Köylü - Resmi Web Sitesi</title>
     <style>
         :root {
             --primary-color: #ff3b3b; /* Kan kırmızısı */
@@ -25,35 +25,41 @@
             padding: 20px;
         }
         
-        /* Dil Seçeneği Butonları */
+        /* --- DİL BUTONU AYARLARI --- */
         .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.5);
-            padding: 5px 15px;
-            border-radius: 20px;
-            border: 1px solid #333;
+            position: fixed; /* Sayfa kaydırılsa bile sabit kalır */
+            top: 20px;       /* Üstten mesafe */
+            right: 20px;     /* Sağdan mesafe */
+            background: rgba(0, 0, 0, 0.8); /* Arka plan hafif şeffaf siyah */
+            padding: 8px 15px;
+            border-radius: 30px;
+            border: 1px solid #444;
+            z-index: 1000;   /* Diğer her şeyin üstünde dursun */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         .lang-btn {
             background: none;
             border: none;
-            color: #888;
+            color: #aaa;
             cursor: pointer;
             font-weight: bold;
             font-size: 14px;
             padding: 0 5px;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
         .lang-btn:hover { color: white; }
-        .lang-btn.active { color: var(--primary-color); text-decoration: underline; }
+        .lang-btn.active { 
+            color: var(--primary-color); 
+            text-decoration: underline; 
+            font-size: 1.1em; /* Seçili olan biraz büyüsün */
+        }
+        /* --------------------------- */
 
         /* Header Alanı */
         header {
             text-align: center;
             padding: 80px 20px;
             background: linear-gradient(180deg, #1a0505 0%, var(--bg-color) 100%);
-            position: relative;
         }
         h1 {
             font-size: 3em;
@@ -108,8 +114,9 @@
 <body>
 
     <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr">TR</button> | 
-        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr">🇹🇷 TR</button> 
+        <span style="color:#555">|</span>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
     </div>
 
     <header>
@@ -145,7 +152,6 @@
     </footer>
 
     <script>
-        // Çeviri Veritabanı
         const translations = {
             tr: {
                 title: "VAMPİR KÖYLÜ",
@@ -176,7 +182,6 @@
         };
 
         function setLanguage(lang) {
-            // Metinleri güncelle
             document.getElementById('title').innerText = translations[lang].title;
             document.getElementById('subtitle').innerText = translations[lang].subtitle;
             document.getElementById('downloadBtn').innerText = translations[lang].downloadBtn;
@@ -189,12 +194,10 @@
             document.getElementById('deleteText').innerHTML = translations[lang].deleteText;
             document.getElementById('footerText').innerHTML = translations[lang].footerText;
 
-            // Buton aktiflik durumunu güncelle
             document.getElementById('btn-tr').classList.remove('active');
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
-            // HTML dil etiketini güncelle
             document.documentElement.lang = lang;
         }
     </script>
