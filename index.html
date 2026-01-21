@@ -25,35 +25,42 @@
             padding: 20px;
         }
         
-        /* --- DİL BUTONU AYARLARI --- */
+        /* --- BAYRAK BUTONU AYARLARI --- */
         .lang-switch {
-            position: fixed; /* Sayfa kaydırılsa bile sabit kalır */
-            top: 20px;       /* Üstten mesafe */
-            right: 20px;     /* Sağdan mesafe */
-            background: rgba(0, 0, 0, 0.8); /* Arka plan hafif şeffaf siyah */
-            padding: 8px 15px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
             border-radius: 30px;
-            border: 1px solid #444;
-            z-index: 1000;   /* Diğer her şeyin üstünde dursun */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .lang-btn {
             background: none;
             border: none;
-            color: #aaa;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 0 5px;
-            transition: all 0.3s;
+            font-size: 24px;
+            padding: 0;
+            transition: all 0.3s ease;
+            opacity: 0.4;
+            filter: grayscale(80%);
         }
-        .lang-btn:hover { color: white; }
+        .lang-btn:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
         .lang-btn.active { 
-            color: var(--primary-color); 
-            text-decoration: underline; 
-            font-size: 1.1em; /* Seçili olan biraz büyüsün */
+            opacity: 1; 
+            transform: scale(1.25);
+            filter: grayscale(0%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
         }
-        /* --------------------------- */
+        /* ------------------------------ */
 
         /* Header Alanı */
         header {
@@ -114,9 +121,8 @@
 <body>
 
     <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr">🇹🇷 TR</button> 
-        <span style="color:#555">|</span>
-        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
+        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">🇹🇷</button> 
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en" title="English">🇬🇧</button>
     </div>
 
     <header>
@@ -141,7 +147,7 @@
         <div class="content-box">
             <h2 id="contactTitle">İletişim & Destek</h2>
             <p id="contactText">Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:</p>
-            <p>📧 <strong>E-posta:</strong> buraya_eposta_adresinizi_yazin@gmail.com</p>
+            <p>📧 <strong>E-posta:</strong> desteksancaktutan@gmail.com</p>
             <p id="deleteText">🗑️ <strong>Veri Silme Talebi:</strong> Hesabınızın veya verilerinizin silinmesi için yukarıdaki maile talep gönderebilirsiniz.</p>
         </div>
 
