@@ -68,7 +68,6 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 2px;
         }
-        /* ------------------------------ */
 
         /* Header Alanı ve Logo */
         header {
@@ -77,14 +76,14 @@
             background: linear-gradient(180deg, #1a0505 0%, var(--bg-color) 100%);
         }
         
-        /* LOGO AYARLARI (GÜNCELLENDİ: ARTIK ÇOK DAHA BÜYÜK) */
+        /* LOGO AYARLARI */
         #game-logo {
-            max-width: 90%; /* Mobilde ekranın %90'ını kaplasın */
-            width: 600px;   /* Bilgisayarda 600px genişliğinde olsun (Eskisi 250px idi) */
+            max-width: 90%; 
+            width: 600px;   
             height: auto;
             display: block;
             margin: 0 auto 20px auto;
-            filter: drop-shadow(0 0 20px rgba(255, 59, 59, 0.4)); /* Parlama efektini de artırdım */
+            filter: drop-shadow(0 0 20px rgba(255, 59, 59, 0.4)); 
             border-radius: 20px; 
         }
 
@@ -159,15 +158,14 @@
 
         <div class="content-box">
             <h2 id="privacyTitle">Privacy Policy</h2>
-            <p id="privacyText">Vampire Villager app respects user privacy. Your personal data (name, location, etc.) is not stored on our servers. The game only uses Google AdMob service and requests basic permissions.</p>
+            <div id="privacyText"></div>
         </div>
 
         <div class="content-box">
             <h2 id="contactTitle">Contact & Support</h2>
             <p id="contactText">Found a bug or have a suggestion? Contact us:</p>
             <p>📧 <strong>E-posta:</strong> desteksancaktutan@gmail.com</p>
-            <p id="deleteText">🗑️ <strong>Data Deletion Request:</strong> You can send a request to the email above to delete your account or data.</p>
-        </div>
+            </div>
 
     </div>
 
@@ -176,6 +174,7 @@
     </footer>
 
     <script>
+        // Uzun metinleri yönetmek için içerikleri buraya HTML formatında ekliyoruz
         const translations = {
             tr: {
                 subtitle: "Kimseye güvenme. Gece çöküyor...",
@@ -183,10 +182,32 @@
                 aboutTitle: "Hakkında",
                 aboutText: "Vampir Köylü, strateji ve gizem dolu bir rol yapma oyunudur. Köylüleri koru ya da hepsini avla. Seçim senin! Arkadaşlarınla veya çevrimiçi oyuncularla nefes kesen bir mücadeleye hazır ol.",
                 privacyTitle: "Gizlilik Politikası",
-                privacyText: "Vampir Köylü uygulaması, kullanıcı gizliliğine önem verir. Kişisel verileriniz (isim, konum vb.) sunucularımızda saklanmaz. Oyun sadece Google AdMob reklam servisini kullanır ve temel izinleri talep eder.",
+                privacyText: `
+                    <p><strong>Son Güncelleme:</strong> 2026</p>
+                    <p>Bu Gizlilik Politikası, "Vampir Köylü" uygulamasını kullananların kişisel verilerinin nasıl toplandığını, kullanıldığını ve paylaşıldığını açıklar.</p>
+                    
+                    <h3>1. Bilgi Toplama ve Kullanma</h3>
+                    <p>Geliştirici olarak, kullanıcılarımızdan doğrudan kişisel olarak tanımlanabilir bilgi (isim, adres, telefon vb.) <strong>toplamıyoruz</strong>. Uygulama, hizmet kalitesini artırmak ve reklam gösterimi sağlamak amacıyla üçüncü taraf hizmetleri kullanabilir.</p>
+                    <p>Uygulama tarafından kullanılan üçüncü taraf hizmet sağlayıcılarının gizlilik politikaları bağlantıları:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                        <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+                    </ul>
+
+                    <h3>2. Log Verileri</h3>
+                    <p>Uygulamamızı kullanırken bir hata oluşması durumunda, telefonunuzda "Log Verisi" adı verilen veriler ve bilgiler (üçüncü taraf ürünler aracılığıyla) toplanabilir. Bu veriler; cihazınızın İnternet Protokolü ("IP") adresi, cihaz adı, işletim sistemi sürümü, uygulamanın yapılandırması gibi bilgileri içerebilir.</p>
+
+                    <h3>3. Çerezler (Cookies)</h3>
+                    <p>Bu Hizmet, çerezleri açıkça kullanmaz. Ancak, uygulama, bilgi toplamak ve hizmetlerini geliştirmek için "çerezler" kullanan üçüncü taraf kodlarını ve kütüphanelerini kullanabilir.</p>
+
+                    <h3>4. Güvenlik</h3>
+                    <p>Kişisel bilgilerinizi bize sağlama konusundaki güveninize değer veriyoruz, bu nedenle ticari olarak kabul edilebilir koruma yöntemlerini kullanmaya çalışıyoruz. Ancak, internet üzerinden hiçbir iletim yönteminin %100 güvenli ve güvenilir olmadığını unutmayın.</p>
+
+                    <h3>5. Çocukların Gizliliği</h3>
+                    <p>Bu Hizmetler 13 yaşın altındaki hiç kimseye hitap etmez. 13 yaşın altındaki çocuklardan bilerek kişisel olarak tanımlanabilir bilgiler toplamıyoruz.</p>
+                `,
                 contactTitle: "İletişim & Destek",
                 contactText: "Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:",
-                deleteText: "🗑️ <strong>Veri Silme Talebi:</strong> Hesabınızın veya verilerinizin silinmesi için yukarıdaki maile talep gönderebilirsiniz.",
                 footerText: "&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır."
             },
             en: {
@@ -195,10 +216,32 @@
                 aboutTitle: "About",
                 aboutText: "Vampire Villager is a role-playing game full of strategy and mystery. Protect the villagers or hunt them all down. The choice is yours! Get ready for a breathtaking battle with your friends or online players.",
                 privacyTitle: "Privacy Policy",
-                privacyText: "Vampire Villager app respects user privacy. Your personal data (name, location, etc.) is not stored on our servers. The game only uses Google AdMob service and requests basic permissions.",
+                privacyText: `
+                    <p><strong>Last Updated:</strong> 2026</p>
+                    <p>This Privacy Policy explains how personal data is collected, used, and shared when you use the "Vampire Villager" application.</p>
+                    
+                    <h3>1. Information Collection and Use</h3>
+                    <p>We do not knowingly collect any personally identifiable information from children under the age of 13. As a developer, we <strong>do not collect</strong> personally identifiable information (such as name, address, phone number) directly from our users. The app may use third-party services that may collect information used to identify you.</p>
+                    <p>Link to privacy policy of third party service providers used by the app:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                        <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
+                    </ul>
+
+                    <h3>2. Log Data</h3>
+                    <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service.</p>
+
+                    <h3>3. Cookies</h3>
+                    <p>This Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services.</p>
+
+                    <h3>4. Security</h3>
+                    <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable.</p>
+
+                    <h3>5. Children’s Privacy</h3>
+                    <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+                `,
                 contactTitle: "Contact & Support",
                 contactText: "Found a bug or have a suggestion? Contact us:",
-                deleteText: "🗑️ <strong>Data Deletion Request:</strong> You can send a request to the email above to delete your account or data.",
                 footerText: "&copy; 2026 Vampire Villager Team. All rights reserved."
             }
         };
@@ -209,10 +252,12 @@
             document.getElementById('aboutTitle').innerText = translations[lang].aboutTitle;
             document.getElementById('aboutText').innerText = translations[lang].aboutText;
             document.getElementById('privacyTitle').innerText = translations[lang].privacyTitle;
-            document.getElementById('privacyText').innerText = translations[lang].privacyText;
+            
+            // Gizlilik politikası artık HTML içerdiği için innerHTML kullanıyoruz
+            document.getElementById('privacyText').innerHTML = translations[lang].privacyText;
+            
             document.getElementById('contactTitle').innerText = translations[lang].contactTitle;
             document.getElementById('contactText').innerText = translations[lang].contactText;
-            document.getElementById('deleteText').innerHTML = translations[lang].deleteText;
             document.getElementById('footerText').innerHTML = translations[lang].footerText;
 
             document.getElementById('btn-tr').classList.remove('active');
@@ -221,6 +266,11 @@
 
             document.documentElement.lang = lang;
         }
+
+        // Sayfa yüklendiğinde varsayılan olarak İngilizce içeriği yükle
+        window.onload = function() {
+            setLanguage('en');
+        };
     </script>
 
 </body>
