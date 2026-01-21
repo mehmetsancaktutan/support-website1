@@ -25,40 +25,48 @@
             padding: 20px;
         }
         
-        /* --- BAYRAK BUTONU AYARLARI --- */
+        /* --- BAYRAK İKON AYARLARI --- */
         .lang-switch {
             position: fixed;
             top: 20px;
             right: 20px;
             background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 30px;
             border: 1px solid #333;
             z-index: 1000;
             backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px; /* Bayraklar arası boşluk */
         }
         .lang-btn {
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 24px;
             padding: 0;
             transition: all 0.3s ease;
-            opacity: 0.4;
-            filter: grayscale(80%);
+            opacity: 0.5;
+            filter: grayscale(100%); /* Pasifken siyah-beyaz */
+        }
+        .lang-btn img {
+            width: 32px; /* Bayrak genişliği */
+            height: auto;
+            display: block;
+            border-radius: 4px; /* Hafif yuvarlak köşe */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         .lang-btn:hover {
-            opacity: 0.8;
+            opacity: 1;
             transform: scale(1.1);
             filter: grayscale(0%);
         }
         .lang-btn.active { 
             opacity: 1; 
-            transform: scale(1.25);
-            filter: grayscale(0%) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+            transform: scale(1.2);
+            filter: grayscale(0%);
+            border-bottom: 2px solid var(--primary-color); /* Seçili olanın altına çizgi */
+            padding-bottom: 2px;
         }
         /* ------------------------------ */
 
@@ -121,8 +129,12 @@
 <body>
 
     <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">🇹🇷</button> 
-        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en" title="English">🇬🇧</button>
+        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">
+            <img src="https://flagcdn.com/w40/tr.png" alt="Türkçe">
+        </button> 
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en" title="English">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English">
+        </button>
     </div>
 
     <header>
