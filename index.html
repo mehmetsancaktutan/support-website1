@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampir Köylü - Resmi Web Sitesi</title>
+    <title>Vampire Villager - Official Website</title>
     <style>
         :root {
             --primary-color: #ff3b3b; /* Kan kırmızısı */
@@ -38,7 +38,7 @@
             backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
-            gap: 15px; /* Bayraklar arası boşluk */
+            gap: 15px; 
         }
         .lang-btn {
             background: none;
@@ -47,13 +47,13 @@
             padding: 0;
             transition: all 0.3s ease;
             opacity: 0.5;
-            filter: grayscale(100%); /* Pasifken siyah-beyaz */
+            filter: grayscale(100%);
         }
         .lang-btn img {
-            width: 32px; /* Bayrak genişliği */
+            width: 32px;
             height: auto;
             display: block;
-            border-radius: 4px; /* Hafif yuvarlak köşe */
+            border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         .lang-btn:hover {
@@ -65,24 +65,28 @@
             opacity: 1; 
             transform: scale(1.2);
             filter: grayscale(0%);
-            border-bottom: 2px solid var(--primary-color); /* Seçili olanın altına çizgi */
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 2px;
         }
         /* ------------------------------ */
 
-        /* Header Alanı */
+        /* Header Alanı ve Logo */
         header {
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
             background: linear-gradient(180deg, #1a0505 0%, var(--bg-color) 100%);
         }
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Logo için yeni stil */
+        #game-logo {
+            max-width: 80%;
+            width: 250px;   /* Logo boyutunu biraz idealize ettim */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+            filter: drop-shadow(0 0 15px rgba(255, 59, 59, 0.3)); /* Kırmızı parlama efekti */
+            border-radius: 20px; /* Eğer köşeli ise biraz yumuşatır */
         }
+
         .subtitle {
             font-size: 1.2em;
             color: #aaa;
@@ -129,50 +133,50 @@
 <body>
 
     <div class="lang-switch">
-        <button class="lang-btn active" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">
+        <button class="lang-btn" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">
             <img src="https://flagcdn.com/w40/tr.png" alt="Türkçe">
         </button> 
-        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en" title="English">
+        <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en" title="English">
             <img src="https://flagcdn.com/w40/gb.png" alt="English">
         </button>
     </div>
 
     <header>
-        <h1 id="title">VAMPİR KÖYLÜ</h1>
-        <p class="subtitle" id="subtitle">Kimseye güvenme. Gece çöküyor...</p>
+        <img id="game-logo" src="bestlogo.png" alt="Vampire Villager Logo">
         
-        <a href="#" class="btn-download" id="downloadBtn">📲 Google Play'den İndir (Yakında)</a>
+        <p class="subtitle" id="subtitle">Trust no one. Night is falling...</p>
+        
+        <a href="#" class="btn-download" id="downloadBtn">📲 Download on Google Play (Soon)</a>
     </header>
 
     <div class="container">
         
         <div class="content-box">
-            <h2 id="aboutTitle">Hakkında</h2>
-            <p id="aboutText">Vampir Köylü, strateji ve gizem dolu bir rol yapma oyunudur. Köylüleri koru ya da hepsini avla. Seçim senin! Arkadaşlarınla veya çevrimiçi oyuncularla nefes kesen bir mücadeleye hazır ol.</p>
+            <h2 id="aboutTitle">About</h2>
+            <p id="aboutText">Vampire Villager is a role-playing game full of strategy and mystery. Protect the villagers or hunt them all down. The choice is yours! Get ready for a breathtaking battle with your friends or online players.</p>
         </div>
 
         <div class="content-box">
-            <h2 id="privacyTitle">Gizlilik Politikası</h2>
-            <p id="privacyText">Vampir Köylü uygulaması, kullanıcı gizliliğine önem verir. Kişisel verileriniz (isim, konum vb.) sunucularımızda saklanmaz. Oyun sadece Google AdMob reklam servisini kullanır ve temel izinleri talep eder.</p>
+            <h2 id="privacyTitle">Privacy Policy</h2>
+            <p id="privacyText">Vampire Villager app respects user privacy. Your personal data (name, location, etc.) is not stored on our servers. The game only uses Google AdMob service and requests basic permissions.</p>
         </div>
 
         <div class="content-box">
-            <h2 id="contactTitle">İletişim & Destek</h2>
-            <p id="contactText">Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:</p>
+            <h2 id="contactTitle">Contact & Support</h2>
+            <p id="contactText">Found a bug or have a suggestion? Contact us:</p>
             <p>📧 <strong>E-posta:</strong> desteksancaktutan@gmail.com</p>
-            <p id="deleteText">🗑️ <strong>Veri Silme Talebi:</strong> Hesabınızın veya verilerinizin silinmesi için yukarıdaki maile talep gönderebilirsiniz.</p>
+            <p id="deleteText">🗑️ <strong>Data Deletion Request:</strong> You can send a request to the email above to delete your account or data.</p>
         </div>
 
     </div>
 
     <footer>
-        <p id="footerText">&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır.</p>
+        <p id="footerText">&copy; 2026 Vampire Villager Team. All rights reserved.</p>
     </footer>
 
     <script>
         const translations = {
             tr: {
-                title: "VAMPİR KÖYLÜ",
                 subtitle: "Kimseye güvenme. Gece çöküyor...",
                 downloadBtn: "📲 Google Play'den İndir (Yakında)",
                 aboutTitle: "Hakkında",
@@ -185,7 +189,6 @@
                 footerText: "&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır."
             },
             en: {
-                title: "VAMPIRE VILLAGER",
                 subtitle: "Trust no one. Night is falling...",
                 downloadBtn: "📲 Download on Google Play (Soon)",
                 aboutTitle: "About",
@@ -200,7 +203,6 @@
         };
 
         function setLanguage(lang) {
-            document.getElementById('title').innerText = translations[lang].title;
             document.getElementById('subtitle').innerText = translations[lang].subtitle;
             document.getElementById('downloadBtn').innerText = translations[lang].downloadBtn;
             document.getElementById('aboutTitle').innerText = translations[lang].aboutTitle;
