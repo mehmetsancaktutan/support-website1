@@ -1,268 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampire Villager - Official Website</title>
-    <style>
-        :root {
-            --primary-color: #ff3b3b; /* Kan kırmızısı */
-            --bg-color: #121212; /* Koyu arka plan */
-            --card-bg: #1e1e1e; /* Kart rengi */
-            --text-color: #e0e0e0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* --- BAYRAK İKON AYARLARI --- */
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px 12px;
-            border-radius: 30px;
-            border: 1px solid #333;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            gap: 15px; 
-        }
-        .lang-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.3s ease;
-            opacity: 0.5;
-            filter: grayscale(100%);
-        }
-        .lang-btn img {
-            width: 32px;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-        .lang-btn:hover {
-            opacity: 1;
-            transform: scale(1.1);
-            filter: grayscale(0%);
-        }
-        .lang-btn.active { 
-            opacity: 1; 
-            transform: scale(1.2);
-            filter: grayscale(0%);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 2px;
-        }
-
-        /* Header Alanı ve Logo */
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, #1a0505 0%, var(--bg-color) 100%);
-        }
-        
-        /* LOGO AYARLARI */
-        #game-logo {
-            max-width: 90%; 
-            width: 600px;   
-            height: auto;
-            display: block;
-            margin: 0 auto 20px auto;
-            filter: drop-shadow(0 0 20px rgba(255, 59, 59, 0.4)); 
-            border-radius: 20px; 
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #aaa;
-            margin-top: 10px;
-        }
-        
-        /* Buton Tasarımı */
-        .btn-download {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-download:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 59, 59, 0.4);
-        }
-
-        /* İçerik Kutuları */
-        .content-box {
-            background: var(--card-bg);
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-        }
-        h2 { color: var(--text-color); border-bottom: 1px solid #333; padding-bottom: 10px; }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-            font-size: 0.9em;
-        }
-        a { color: var(--primary-color); text-decoration: none; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vampire Villager: Werewolf – offline party game for one phone</title>
+<meta name="description" content="Vampire Villager: Werewolf is an offline Werewolf/Mafia-style party game for 3–15 players on a single phone. The app runs the night, so no moderator is needed. No ads, no account.">
+<link rel="canonical" href="https://mehmetsancaktutan.github.io/support-website1/">
+<link rel="alternate" hreflang="en" href="https://mehmetsancaktutan.github.io/support-website1/">
+<link rel="alternate" hreflang="tr" href="https://mehmetsancaktutan.github.io/support-website1/tr/">
+<link rel="alternate" hreflang="x-default" href="https://mehmetsancaktutan.github.io/support-website1/">
+<meta name="theme-color" content="#0d0909">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vampire Villager">
+<meta property="og:title" content="Vampire Villager: Werewolf – offline party game for one phone">
+<meta property="og:description" content="Vampires vs villagers for 3–15 players. One phone, no moderator, no internet, no ads.">
+<meta property="og:url" content="https://mehmetsancaktutan.github.io/support-website1/">
+<meta property="og:image" content="https://mehmetsancaktutan.github.io/support-website1/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vampire Villager logo: a red bat and a pitchfork in front of a full moon">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-current="page"><img src="assets/favicon-32.png" alt="" width="32" height="32">Vampire Villager</a>
+    <nav class="header-nav" aria-label="Main">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#premium">Premium</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+      <p class="lang"><span aria-current="true" lang="en">EN</span><span class="sep" aria-hidden="true">|</span><a href="tr/" hreflang="tr" lang="tr" title="Türkçe">TR</a></p>
+    </nav>
+  </div>
+</header>
 
-    <div class="lang-switch">
-        <button class="lang-btn" onclick="setLanguage('tr')" id="btn-tr" title="Türkçe">
-            <img src="https://flagcdn.com/w40/tr.png" alt="Türkçe">
-        </button> 
-        <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en" title="English">
-            <img src="https://flagcdn.com/w40/gb.png" alt="English">
-        </button>
+<main id="main">
+  <div class="hero">
+    <div class="wrap">
+      <img class="hero-logo" src="assets/logo-320.png" srcset="assets/logo-320.png 320w, assets/logo-640.png 640w" sizes="(min-width: 700px) 300px, 240px" width="300" height="300" alt="Vampire Villager logo: a red bat and a pitchfork in front of a full moon">
+      <p class="eyebrow">Offline party game</p>
+      <h1>Vampire Villager: Werewolf</h1>
+      <p class="pitch">Vampires against villagers for 3–15 friends and a single phone. The app runs the night, so nobody has to sit out as moderator.</p>
+      <div class="cta-row">
+        <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.mehmett1.vampirkoylu" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5v11m-4.5-4.5 4.5 4.5 4.5-4.5M5 19.5h14"/></svg>
+          <span><span class="small">Free download for</span><span class="big">Android</span></span>
+        </a>
+        <p class="cta-note">Available on Google Play. No ads, no account, no internet needed to play.</p>
+      </div>
     </div>
+  </div>
 
-    <header>
-        <img id="game-logo" src="bestlogo.png" alt="Vampire Villager Logo">
-        
-        <p class="subtitle" id="subtitle">Trust no one. Night is falling...</p>
-        
-        <a href="#" class="btn-download" id="downloadBtn">📲 Download on Google Play (Soon)</a>
-    </header>
-
-    <div class="container">
-        
-        <div class="content-box">
-            <h2 id="aboutTitle">About</h2>
-            <p id="aboutText">Vampire Villager is a role-playing game full of strategy and mystery. Protect the villagers or hunt them all down. The choice is yours! Get ready for a breathtaking battle with your friends or online players.</p>
-        </div>
-
-        <div class="content-box">
-            <h2 id="privacyTitle">Privacy Policy</h2>
-            <div id="privacyText"></div>
-        </div>
-
-        <div class="content-box">
-            <h2 id="contactTitle">Contact & Support</h2>
-            <p id="contactText">Found a bug or have a suggestion? Contact us:</p>
-            <p>📧 <strong>E-posta:</strong> desteksancaktutan@gmail.com</p>
-        </div>
-
+  <section id="how" class="section-alt" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">How it works</h2>
+      <p class="section-lead">It's the classic Werewolf / Mafia game, except the phone does the moderator's job.</p>
+      <ol class="steps">
+        <li><h3>Add players</h3><p>Type in 3 to 15 names. A photo for each player is optional.</p></li>
+        <li><h3>Pick roles</h3><p>Choose roles yourself or tap a quick preset.</p></li>
+        <li><h3>Pass the phone</h3><p>Each player looks at their secret role in private, then hands the phone on.</p></li>
+        <li><h3>Night falls</h3><p>The app calls each role in turn and works out who was attacked, saved or investigated.</p></li>
+        <li><h3>Day breaks</h3><p>Talk it over against the discussion timer, then vote someone out. Keep going until one side wins.</p></li>
+      </ol>
     </div>
+  </section>
 
-    <footer>
-        <p id="footerText">&copy; 2026 Vampire Villager Team. All rights reserved.</p>
-    </footer>
+  <section id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <h2 id="features-title">Features</h2>
+      <p class="section-lead">Built for a table of friends: easy to set up, and no extra gear required.</p>
+      <ul class="features">
+        <li><span class="stat">1 phone</span><h3>Offline, one device</h3><p>The game works without internet. One phone gets passed around the table.</p></li>
+        <li><span class="stat">0 moderators</span><h3>No moderator needed</h3><p>The app runs the night, so everyone plays and nobody has to sit out.</p></li>
+        <li><span class="stat">20 roles</span><h3>Villagers, vampires and neutrals</h3><p>Doctor, Detective, Jester, Mayor, Gunner, Bomber, Ghost and more.</p></li>
+        <li><span class="stat">3–15</span><h3>Players</h3><p>Works for a small table and for a big party.</p></li>
+        <li><span class="stat">Narrator</span><h3>Narrator mode</h3><p>Would you rather have a host? One person narrates and the phone stays with them all night.</p></li>
+        <li><span class="stat">Presets</span><h3>Quick role presets</h3><p>One tap gives you a balanced role setup for the number of players you have.</p></li>
+        <li><span class="stat">Timer</span><h3>Discussion timer and voting</h3><p>The day phase stays on schedule and the voting is handled for you.</p></li>
+        <li><span class="stat">7 languages</span><h3>Play in your language</h3><p>English, <span lang="tr">Türkçe</span>, <span lang="de">Deutsch</span>, <span lang="fr">Français</span>, <span lang="es">Español</span>, <span lang="it">Italiano</span>, <span lang="ru">Русский</span>.</p></li>
+      </ul>
+    </div>
+  </section>
 
-    <script>
-        const translations = {
-            tr: {
-                subtitle: "Kimseye güvenme. Gece çöküyor...",
-                downloadBtn: "📲 Google Play'den İndir (Yakında)",
-                aboutTitle: "Hakkında",
-                aboutText: "Vampir Köylü, strateji ve gizem dolu bir rol yapma oyunudur. Köylüleri koru ya da hepsini avla. Seçim senin! Arkadaşlarınla veya çevrimiçi oyuncularla nefes kesen bir mücadeleye hazır ol.",
-                privacyTitle: "Gizlilik Politikası",
-                privacyText: `
-                    <p><strong>Son Güncelleme:</strong> 2026</p>
-                    <p>Vampir Köylü ("Hizmet") geliştiricisi olarak gizliliğinize büyük önem veriyoruz. Bu gizlilik politikası, verilerinizin nasıl işlendiğini açıklar.</p>
-                    
-                    <h3>1. Veri Toplamama Beyanı</h3>
-                    <p>Açıkça belirtmek isteriz ki; geliştirici olarak <strong>hiçbir kişisel verinizi (isim, telefon numarası, fotoğraf, konum vb.) sunucularımızda toplamıyor, saklamıyor ve işlemiyoruz.</strong> Uygulama, kişisel bilgilerinizi talep etmeden çalışacak şekilde tasarlanmıştır.</p>
+  <section id="premium" class="section-alt" aria-labelledby="premium-title">
+    <div class="wrap">
+      <h2 id="premium-title">Free vs Premium</h2>
+      <p class="section-lead">The core game is free to play. Premium is a single purchase that unlocks all 20 roles and up to 15 players for good. There is no subscription.</p>
+      <div class="plans">
+        <article class="plan" aria-labelledby="plan-free">
+          <h3 id="plan-free">Free</h3>
+          <p class="price">No cost, no ads</p>
+          <ul>
+            <li>5 roles: Villager, Vampire, Doctor, Detective, Jester</li>
+            <li>Up to 8 players</li>
+            <li>Narrator mode, discussion timer and voting</li>
+            <li>The Classic preset</li>
+            <li>All 7 languages</li>
+          </ul>
+        </article>
+        <article class="plan premium" aria-labelledby="plan-premium">
+          <h3 id="plan-premium">Premium <span class="badge">One-time</span></h3>
+          <p class="price">Pay once, yours for life on your store account. No subscription.</p>
+          <ul>
+            <li>All 20 roles</li>
+            <li>Up to 15 players</li>
+            <li>All role presets: Chaos, Dark Hunt and Intrigue</li>
+            <li>Restore it on a new phone that uses the same store account</li>
+          </ul>
+          <p class="roles">Premium roles: Mayor, Dreamer, Locker, Lover, Gunner, Watcher, Snitch, Vampire Detective, Vampire Watcher, Silencer, Bomber, Sorcerer, Coward, Ghost, Obsessive.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                    <h3>2. Üçüncü Taraf Hizmetleri</h3>
-                    <p>Biz veri toplamasak da, uygulama işlevselliği (örneğin reklam gösterimi) için Google Play Hizmetleri ve Google AdMob gibi üçüncü taraf kütüphanelerini kullanabilir. Bu servisler, size uygun reklamlar sunmak veya uygulama performansını ölçmek için cihaz kimliği gibi anonim verileri toplayabilir.</p>
-                    <p>Kullanılan servislerin gizlilik politikaları:</p>
-                    <ul>
-                        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-                        <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
-                    </ul>
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap narrow">
+      <h2 id="faq-title">FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>Is it an online game?</summary>
+          <div><p>No. Everyone plays in the same room on one phone that gets passed around. You don't need an internet connection to play. The app only uses the internet to check, buy or restore Premium.</p></div>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <div><p>No. There is no sign-up or login. Player names and photos are stored on your phone and never sent to us.</p></div>
+        </details>
+        <details>
+          <summary>Are there ads?</summary>
+          <div><p>None at all. The app also has no analytics or tracking tools.</p></div>
+        </details>
+        <details>
+          <summary>I bought Premium. How do I restore it?</summary>
+          <div><p>Sign in to your phone with the Google account you used to buy Premium, open the app's <strong>Shop</strong> screen and tap <strong>Restore Purchases</strong>. The purchase is linked to your store account, so it also works after you reinstall the app or move to a new phone.</p></div>
+        </details>
+        <details>
+          <summary>Is Premium a subscription?</summary>
+          <div><p>No. You pay once and there are no recurring charges. Google Play handles payment and refunds.</p></div>
+        </details>
+        <details>
+          <summary>How many people can play?</summary>
+          <div><p>From 3 players. The free version goes up to 8 players and Premium goes up to 15.</p></div>
+        </details>
+        <details>
+          <summary>How do I delete my data?</summary>
+          <div><p>All game data stays on your phone. <strong>Settings › Reset Data</strong> in the app clears the current player list and role setup. To delete everything, including player photos, uninstall the app or clear its storage. The <a href="privacy.html#deletion">privacy policy</a> has more detail.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
 
-                    <h3>3. Çerezler ve Güvenlik</h3>
-                    <p>Uygulamamız doğrudan çerez (cookie) kullanmaz. Kişisel veri toplamadığımız için verilerinizin sızdırılması veya çalınması gibi bir risk tarafımızca oluşturulmaz.</p>
+  <section id="support" class="section-alt" aria-labelledby="support-title">
+    <div class="wrap narrow">
+      <h2 id="support-title">Contact &amp; support</h2>
+      <div class="contact-card">
+        <p>Found a bug, got stuck with a purchase, or have an idea for a new role? Send an email and tell us your phone model and app version.</p>
+        <p class="email"><a href="mailto:desteksancaktutan@gmail.com">desteksancaktutan@gmail.com</a></p>
+        <p>You can write in English or Turkish.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-                    <h3>4. Çocukların Gizliliği</h3>
-                    <p>Uygulamamız çocuklardan veya yetişkinlerden herhangi bir kimlik bilgisi talep etmez.</p>
-                `,
-                contactTitle: "İletişim & Destek",
-                contactText: "Bir hata mı buldunuz veya öneriniz mi var? Bize ulaşın:",
-                footerText: "&copy; 2026 Vampir Köylü Ekibi. Tüm hakları saklıdır."
-            },
-            en: {
-                subtitle: "Trust no one. Night is falling...",
-                downloadBtn: "📲 Download on Google Play (Soon)",
-                aboutTitle: "About",
-                aboutText: "Vampire Villager is a role-playing game full of strategy and mystery. Protect the villagers or hunt them all down. The choice is yours! Get ready for a breathtaking battle with your friends or online players.",
-                privacyTitle: "Privacy Policy",
-                privacyText: `
-                    <p><strong>Last Updated:</strong> 2026</p>
-                    <p>As the developer of Vampire Villager ("Service"), we prioritize your privacy. This policy explains our stance on data collection.</p>
-                    
-                    <h3>1. No Data Collection Policy</h3>
-                    <p>We explicitly state that as the developer, <strong>we do not collect, store, or process any of your personal data (name, phone number, photos, location, etc.) on our servers.</strong> The application is designed to function without requesting personal information.</p>
-
-                    <h3>2. Third-Party Services</h3>
-                    <p>While we do not collect data, the app may use third-party libraries such as Google Play Services and Google AdMob to provide functionality (e.g., displaying ads). These services may collect anonymous data, such as device IDs, to serve relevant ads or measure performance.</p>
-                    <p>Privacy policies of the services used:</p>
-                    <ul>
-                        <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-                        <li><a href="https://support.google.com/admob/answer/6128543?hl=tr" target="_blank">AdMob</a></li>
-                    </ul>
-
-                    <h3>3. Cookies and Security</h3>
-                    <p>Our app does not explicitly use cookies. Since we do not collect personal data, we do not store any sensitive information that could be compromised.</p>
-
-                    <h3>4. Children’s Privacy</h3>
-                    <p>Our application does not request any personally identifiable information from children or adults.</p>
-                `,
-                contactTitle: "Contact & Support",
-                contactText: "Found a bug or have a suggestion? Contact us:",
-                footerText: "&copy; 2026 Vampire Villager Team. All rights reserved."
-            }
-        };
-
-        function setLanguage(lang) {
-            document.getElementById('subtitle').innerText = translations[lang].subtitle;
-            document.getElementById('downloadBtn').innerText = translations[lang].downloadBtn;
-            document.getElementById('aboutTitle').innerText = translations[lang].aboutTitle;
-            document.getElementById('aboutText').innerText = translations[lang].aboutText;
-            document.getElementById('privacyTitle').innerText = translations[lang].privacyTitle;
-            
-            document.getElementById('privacyText').innerHTML = translations[lang].privacyText;
-            
-            document.getElementById('contactTitle').innerText = translations[lang].contactTitle;
-            document.getElementById('contactText').innerText = translations[lang].contactText;
-            document.getElementById('footerText').innerHTML = translations[lang].footerText;
-
-            document.getElementById('btn-tr').classList.remove('active');
-            document.getElementById('btn-en').classList.remove('active');
-            document.getElementById('btn-' + lang).classList.add('active');
-
-            document.documentElement.lang = lang;
-        }
-
-        window.onload = function() {
-            setLanguage('en');
-        };
-    </script>
-
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="mailto:desteksancaktutan@gmail.com">Support</a></li>
+        <li><a href="tr/" hreflang="tr" lang="tr">Türkçe</a></li>
+      </ul>
+    </nav>
+    <p>© 2026 Mehmet Sancaktutan. Vampire Villager is made by an independent developer in Türkiye.</p>
+    <p>Google Play is a trademark of Google LLC.</p>
+  </div>
+</footer>
 </body>
 </html>
